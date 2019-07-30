@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MVVM_ROOM_LIVE_DATA</string>
+    <string name="button_create">Create</string>
+    <string name="hint_project">Name your project</string>
+</resources>

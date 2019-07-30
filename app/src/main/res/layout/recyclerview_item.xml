@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="example.room.livedata.utilis.DateUtilis"
+        />
+        <variable
+                name="project"
+                type="example.room.livedata.model.Projects"/>
+        <variable
+                name="callback"
+                type="example.room.livedata.view.callbacks.OnItemClickListener"/>
+    </data>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:onClick="@{(view)->callback.onItemClick(view,project)}"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:id="@+id/tv_projectName"
+                android:textColor="#414141"
+                style="@style/word_title"
+                android:text="@{project.mProjectName}"
+                android:textSize="15sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        <TextView
+                android:id="@+id/tv_ut"
+                style="@style/word_title"
+                android:textSize="10sp"
+                android:textColor="#888686"
+                android:text="@{DateUtilis.getFormattedString(project.mUpdatedTimeStamp)}"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+<data>
+    <import type="example.room.livedata.utilis.DateUtilis"
+    />
+    <variable
+            name="data"
+            type="example.room.livedata.model.Projects"/>
+    <variable
+            name="activity"
+            type="example.room.livedata.view.activity.NewProjectActivity"/>
+</data>
+
+<LinearLayout
+        android:padding="@dimen/small_padding"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <EditText
+            android:id="@+id/edit_pjct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:hint="@string/hint_project"
+            android:inputType="textAutoComplete"
+            android:text="@={data.mProjectName}"
+            android:padding="@dimen/small_padding"
+            android:layout_marginBottom="@dimen/big_padding"
+            android:layout_marginTop="@dimen/big_padding"
+            android:textSize="18sp"/>
+
+    <Button
+            android:id="@+id/button_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:text="@string/button_create"
+            android:onClick="@{(view)->activity.onClick(view)}"
+            android:textColor="@color/colorPrimaryDark"/>
+
+</LinearLayout>
+</layout>
